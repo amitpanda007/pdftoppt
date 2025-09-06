@@ -1,7 +1,7 @@
 """
 PDFToPPT - Advanced PDF to PowerPoint Converter
 
-A Python package for converting PDF documents to PowerPoint presentations 
+A Python package for converting PDF documents to PowerPoint presentations
 with high fidelity preservation of layouts, images, text, and vector graphics.
 """
 
