@@ -1,0 +1,68 @@
+[build-system]
+requires = ["setuptools>=45", "wheel", "setuptools_scm[toml]>=6.2"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pdftoppt"
+version = "1.0.0"
+authors = [
+    {name = "Amit Panda", email = "amitpanda007@gmail.com"},
+]
+description = "Advanced PDF to PowerPoint converter with high fidelity"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.7"
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: End Users/Desktop",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Office/Business :: Office Suites",
+    "Topic :: Multimedia :: Graphics :: Graphics Conversion",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+keywords = ["pdf", "powerpoint", "converter", "presentation", "office"]
+dependencies = [
+    "PyMuPDF>=1.20.0",
+    "python-pptx>=0.6.18",
+    "Pillow>=8.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=6.0",
+    "pytest-cov>=2.0",
+    "black>=21.0",
+    "flake8>=3.8",
+    "mypy>=0.800",
+]
+
+[project.urls]
+Homepage = "https://github.com/amitpanda007/pdftoppt"
+"Bug Reports" = "https://github.com/amitpanda007/pdftoppt/issues"
+"Source Code" = "https://github.com/amitpanda007/pdftoppt"
+Documentation = "https://github.com/amitpanda007/pdftoppt#readme"
+
+[project.scripts]
+pdftoppt = "pdftoppt.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["pdftoppt*"]
+
+[tool.black]
+line-length = 88
+target-version = ['py37']
+include = '\.pyi?$'
+
+[tool.mypy]
+python_version = "3.7"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
